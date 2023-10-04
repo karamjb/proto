@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package dto;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "./";
+option java_multiple_files = false;
+option java_package = "com.karam.proto.events";
+
+
+message EventMessage {
+  Types type = 1;
+  Payload payload = 2;
+  Source source = 3;
+  int64 ts_ms = 4;
+}
+
+message Payload {
+  string uuid = 1;
+  string name = 2;
+  string position = 3;
+  string departmentUuid = 4;
+  int salary = 5;
+  google.protobuf.Timestamp createdAt = 6;
+  google.protobuf.Timestamp updatedAt = 7;
+  
+}
+
+message Source {
+  string version = 1;
+  string name = 2;
+  string pod = 3;
+  string ip = 4;
+  string user = 6;
+}
+
+enum Types {
+  EMPLOYEE_CREATED = 0;
+  EMPLOYEE_UPDATED = 1;
+  EMPLOYEE_DELETED = 2;
+}
+
