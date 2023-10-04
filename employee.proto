@@ -21,7 +21,7 @@ message Payload {
   string name = 2;
   string position = 3;
   string departmentUuid = 4;
-  int salary = 5;
+  int32 salary = 5;
   google.protobuf.Timestamp createdAt = 6;
   google.protobuf.Timestamp updatedAt = 7;
   
