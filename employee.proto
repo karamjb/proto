@@ -6,7 +6,6 @@ import "google/protobuf/timestamp.proto";
 
 option go_package = "./";
 option java_multiple_files = false;
-option java_package = "com.karam.proto.events";
 
 
 message EventMessage {
